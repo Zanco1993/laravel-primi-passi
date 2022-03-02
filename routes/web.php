@@ -19,13 +19,35 @@ Route::get('/home', function () {
     $listNav = [
         'home' => 'Home',
         'chiSiamo' => 'Chi siamo',
-        'Contatti' => 'Contatti'
+        'contatti' => 'Contatti'
     ];
     // passiamo solo $listnav
     // return view('home', $listNav);
 
     // passiamo un array di informazioni
     return view('home', [
+        'list' => $listNav
+    ]);
+});
+
+Route::get('/chiSiamo', function() {
+    $listNav = [
+        'home' => 'Home',
+        'chiSiamo' => 'Chi siamo',
+        'contatti' => 'Contatti'
+    ];
+    return view('chiSiamo', [
+        'list' => $listNav
+    ]);
+});
+
+Route::get('/contatti', function() {
+    $listNav = [
+        'home' => 'Home',
+        'chiSiamo' => 'Chi siamo',
+        'contatti' => 'Contatti'
+    ];
+    return view('contatti', [
         'list' => $listNav
     ]);
 });
