@@ -15,6 +15,20 @@ use function Ramsey\Uuid\v1;
 |
 */
 
+Route::get('/', function () {
+    $listNav = [
+        'home' => 'Home',
+        'chiSiamo' => 'Chi siamo',
+        'contatti' => 'Contatti'
+    ];
+    // passiamo solo $listnav
+    // return view('home', $listNav);
+
+    // passiamo un array di informazioni
+    return view('home', [
+        'list' => $listNav
+    ]);
+});
 Route::get('/home', function () {
     $listNav = [
         'home' => 'Home',
