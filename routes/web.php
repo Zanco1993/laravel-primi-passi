@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/home', function () {
-    return view('home');
+    $listNav = [
+        'home' => 'Home',
+        'chiSiamo' => 'Chi siamo',
+        'Contatti' => 'Contatti'
+    ];
+    // passiamo solo $listnav
+    // return view('home', $listNav);
+
+    // passiamo un array di informazioni
+    return view('home', [
+        'list' => $listNav
+    ]);
 });
+
